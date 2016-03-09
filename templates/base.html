@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Pin">
+    <title> {% block title %}{% endblock %} </title>
+    {% load static from staticfiles %}
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="">
+
+    <!-- Web Fonts -->
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:400,300,600&amp;subset=cyrillic,latin">
+
+
+    {#    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">#}
+    {#    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">#}
+
+
+    <!--CSS Global Compulsory -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap-theme.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+
+    <link rel="stylesheet" href="{% static 'plugins/fancybox/source/jquery.fancybox.css' %}">
+    <link rel="stylesheet" href="{% static 'plugins/owl-carousel/owl-carousel/owl.carousel.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+
+    <!-- CSS Header and Footer -->
+    <link rel="stylesheet" href="{% static 'css/headers/header-v6.css' %}">
+
+    <!-- CSS Implementing Plugins-->
+    <link rel="stylesheet" href="{% static 'plugins/animate.css' %}">
+    <link rel="stylesheet" href="{% static 'plugins/line-icons/line-icons.css' %}">
+    <link rel="stylesheet" href="{% static 'plugins/font-awesome/css/font-awesome.min.css' %}">
+
+    <!-- CSS Theme -->
+    <link rel="stylesheet" href="{% static 'css/theme-colors/default.css' %} " id="style_color">
+    <link rel="stylesheet" href="{% static 'css/theme-skins/dark.css' %}">
+    <link rel="stylesheet" href="{% static 'css/wealth.style.css' %}">
+    <!-- CSS Customization -->
+    <link rel="stylesheet" href="{% static 'css/custom.css' %}">
+
+
+    <style>
+        .g-bg-white{ background-color: #fff;}
+        .g-pt-10 { padding-top: 10px;}
+        .g-pt-20 { padding-top: 20px;}
+        .g-pt-30 { padding-top: 30px;}
+        .g-pt-40 { padding-top: 40px;}
+        .g-pt-50 { padding-top: 50px;}
+        .g-pt-60 { padding-top: 60px;}
+        .g-pt-70 { padding-top: 70px;}
+        .g-pt-80 { padding-top: 80px;}
+        .g-pt-85 { padding-top: 80px;}
+        .g-pt-90 { padding-top: 90px;}
+        .g-pt-100 { padding-top: 100px;}
+        .g-pt-110 { padding-top: 110px;}
+        .g-pt-120 { padding-top: 120px;}
+        .g-pt-130 { padding-top: 130px;}
+        .g-pt-140 { padding-top: 140px;}
+        .g-pt-150 { padding-top: 150px;}
+        .g-pt-160 { padding-top: 160px;}
+        .g-pt-170 { padding-top: 170px;}
+        .g-mb-10 { margin-bottom: 10px; }
+
+        .pagination > li > a:hover {
+            color: #fff;
+            background: #F739AE;
+            border-color: #F739AE;
+        }
+        a {
+            color: #FA82CC;
+            text-decoration: none;
+        }
+        .pink{
+            color: #FA82CC;
+        }
+        .bg-pink{
+            background: #FACDE9!important;
+        {#            background-color: #FACDE9;#}
+        }
+        .bg-dpink{
+            background-color: #FA82CC;
+        }
+        .header-v6 .navbar-brand > a{
+            color: #fff;
+        }
+        @media (max-width: 992px) {
+            .header-v6 .navbar-brand > a{
+                color: #FA82CC;
+            }
+        }
+
+        /*Navbar Brand*/
+        .header-fixed .header-v6.header-fixed-shrink .navbar-brand > a {
+            color: #FA82CC;
+        }
+
+        {#        @media (max-width: 991px) {#}
+        .header-v6 .navbar-nav > li > a:hover {
+            color: #F739AE;
+        }
+
+        .header-v6 .navbar-nav > .active > a,
+        .header-v6 .navbar-nav > .active > a:hover,
+        .header-v6 .navbar-nav > .active > a:focus {
+            background: inherit;
+            color: #F739AE !important;
+        }
+        {#        }#}
+
+        @media (min-width: 992px) {
+            .header-fixed .header-v6.header-fixed-shrink .navbar-nav .active > a,
+            .header-fixed .header-v6.header-fixed-shrink .navbar-nav li > a:hover {
+                color: #FA82CC;
+            }
+        }
+
+        .header-v6 .mega-menu .equal-height-list > h3.active,
+        .header-v6 .mega-menu .equal-height-list > .active > a,
+        .header-v6 .mega-menu .equal-height-list > .active > a:hover,
+        .header-v6 .mega-menu .equal-height-list > .active > a:focus {
+            color: #F739AE;
+            background-color: transparent;
+        }
+
+        .header-v6 .mega-menu .equal-height-list li a:hover {
+            color: #F739AE;
+            text-decoration: none;
+        }
+
+        .g-color-default { color: #FA82CC;}
+
+        .g-bg-white{ background-color: #fff;}
+        .g-bg-dark{ background-color: #333;}
+        .g-heading-v9:after {
+            border-bottom: 1px solid #FA82CC;
+        }
+
+        .g-bg-default-color,
+        .g-bg-default-color:focus {
+            background: #FA82CC;
+            color: #fff;
+        }
+        ::selection {
+            color: #fff;
+            background: #FA82CC;
+        }
+        body{
+            height: auto;
+        }
+
+        .btn-facebook-inversed{
+            background-color: #4863ae;
+            border-color: #4863ae;
+            color: white;
+        }
+        .btn-facebook-inversed:hover{
+
+            background-color: white;
+            border-color: #4863ae;
+            color: #4863ae;
+            -webkit-appearance: none;
+            -webkit-box-shadow: none;
+            -webkit-transition-delay: 0s;
+            -webkit-transition-duration: 0.3s;
+            -webkit-transition-property: all;
+            -webkit-transition-timing-function: ease-in-out;
+            text-align: center;
+            text-decoration: none;
+            text-shadow: none;
+            text-transform: none;
+            transition-delay: 0s;
+            transition-duration: 0.3s;
+            transition-property: all;
+            transition-timing-function: ease-in-out;
+            vertical-align: middle;
+        }
+    </style>
+    {% block cssstyle %}{% endblock %}
+
+</head>
+<body class="header-fixed">
+<div class="header-v6 header-white-transparent header-sticky">
+    <!-- Navbar -->
+    <div class="navbar mega-menu" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="menu-container">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+                <!-- Navbar Brand -->
+                <div class="navbar-brand">
+                    <a href="{% url 'index' %}" >
+                        蘇惠珍皮膚科診所
+                    </a>
+                </div>
+                <!-- ENd Navbar Brand -->
+
+                <!-- Header Inner Right -->
+                <div class="header-inner-right">
+                    <ul class="menu-icons-list">
+
+                        <li class="menu-icons">
+                            <i class="menu-icons-style search search-close search-btn fa fa-search"></i>
+                            <div class="search-open">
+                                <input type="text" class="animated fadeIn form-control" placeholder="Start searching ...">
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <!-- End Header Inner Right -->
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-responsive-collapse">
+                <div class="menu-container">
+                    <ul class="nav navbar-nav">
+                        <li>
+                            {% if user.is_authenticated %}
+                                Welcome back {{ user.username }}
+                            {% else %}
+                                You are not logged in
+                            {% endif %}
+                        </li>
+                        <!-- Home -->
+                        <li>
+                            <a href="{% url 'index' %}">
+                                首頁
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                醫美療程
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="{% url 'clinic_schedule' %}">
+                                看診時間
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="{% url 'messages_board' %}">
+                                線上諮詢
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'blog_index' %}">
+                                文章分類
+                            </a>
+                        </li>
+
+
+                    </ul>
+                </div>
+            </div><!--/navbar-collapse-->
+        </div>
+    </div>
+    <!-- End Navbar -->
+</div>
+<!--=== End Header v6 ===-->
+
+
+
+{% block content %}
+{% endblock %}
+
+<!-- Footer -->
+<section class="footer g-bg-dark g-pt-40 g-pb-20" id="footer">
+    <div class="container">
+        <div class="g-display-table g-xs-display-table--disable">
+            <div class="g-color-white g-display-td g-display-td-40 g-xs-display-td--disable g-text-middle g-xs-mb-20">&copy; 2016 All right reserved. </div>
+            <div class="g-display-td g-display-td-20 g-xs-display-td--disable g-text-middle text-center g-xs-mb-10">
+                <ul class="social-icons">
+                    <li><a class="rounded-x social_facebook" data-original-title="Facebook" href="https://www.facebook.com/蘇惠珍皮膚科診所-364805010383895/"></a></li>
+                </ul>
+            </div>
+            <div class="g-display-td g-display-td-40 g-xs-display-td--disable g-text-middle text-right">
+                <div class="row">
+                    <div class="col-md-6 g-color-white ">
+                        <span class="icon icon-call-in g-color-default"></span> &nbsp;02-2838-3090
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End Footer -->
+
+
+
+<!-- JS Global Compulsory -->
+<script src="{% static 'js/jquery-2.1.4.min.js' %}"></script>
+<script src="{% static 'plugins/jquery/jquery-migrate.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/jquery.lazyload.min.js' %}"></script>
+
+
+<script src="{% static 'plugins/back-to-top.js' %}"></script>
+<script src="{% static 'plugins/smoothScroll.js' %}"></script>
+<script src="{% static 'plugins/jquery.parallax.js' %}"></script>
+
+
+{% block JSblock %}{% endblock %}
+
+<!-- JS Customization -->
+<script src="{% static 'js/custom.js' %}"></script>
+
+<!-- Page Level -->
+<script src="{% static 'js/app.js' %}"></script>
+<script src="{% static 'js/plugins/style-switcher.js' %}"></script>
+
+<script type="text/javascript">
+    jQuery(document).ready(function() {
+
+        App.init();
+        StyleSwitcher.initStyleSwitcher();
+        OwlCarousel.initOwlCarousel();
+        FancyBox.initFancybox();
+        App.initParallaxBg();
+
+    });
+</script>
+<!--[if lt IE 9]>
+    <script src="{% static 'plugins/html5shiv.js' %}"></script>
+    <script src="{% static 'plugins/respond.js' %}"></script>
+    <script src="{% static 'plugins/placeholder-IE-fixes.js' %}"></script>
+    <![endif]-->
+
+</body>
+</html>

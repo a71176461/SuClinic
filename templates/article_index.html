@@ -1,0 +1,187 @@
+{% extends 'article_index_base.html'%}
+{% block title %} 蘇惠珍皮膚科診所 {% endblock %}
+{% load i18n static %}
+{% load staticfiles bootstrap3 %}
+
+{% block cssstyle1 %}
+    <meta property="fb:admins" content="a71176461">
+    <meta property="fb:app_id" content="185799531790979">
+
+
+    <style>
+
+
+
+
+
+
+    </style>
+{% endblock cssstyle1 %}
+
+
+{% block content_blog %}
+
+    <div class="container" style="padding-top: 100px;position: relative;">
+        <ul class="nav navbar-nav">
+
+            <li><a href="{% url 'blog_index' %}">文章首頁</a></li>
+
+            {% for category in categories %}
+{#                {% with cat=category.blog_set.all|first %}#}
+                    <li><a href="/blog/{{ category.pk }}">{{ category.name }}</a></li>
+{#                {% endwith %}#}
+            {% endfor %}
+
+        </ul>
+
+    </div>
+{#    <ul>#}
+{#        <li>page_obj: {{ page_obj }}</li>#}
+{#        <li>blog_list: {{ blog_list }}</li>#}
+{#        <li>object_list: {{ object_list }}</li>#}
+{#        <li>object: {{ object }}</li>#}
+{#                            <li>blog_detail: {{ blog_detail }}</li>#}
+{#    <li>categories: {{ categories }}</li>#}
+{#    <li>categories.blog: {{ categories.blog }}</li>#}
+{#    </ul>#}
+    <!-- Master Slider -->
+    <div class="container content no-padding-bottom">
+        <div class="master-slider ms-skin-black-2 round-skin" id="masterslider">
+            {% for category in categories %}
+                {% with cat=category.blog_set.all|first %}
+                    <div class="ms-slide blog-slider">
+                        <img src="{% static 'plugins/master-slider/masterslider/style/blank.gif' %}" data-src="/media/{{ cat.images }}" alt="lorem ipsum dolor sit"/>
+                        <span class="blog-slider-badge">{{ category }}</span>
+                        <div class="ms-info"></div>
+                        <div class="blog-slider-title" style="background-color: rgba(0,0,0,0.5);">
+                            <span class="blog-slider-posted">{{ cat.time|date:"M d, Y" }}</span>
+                            <h2 ><a href="{{ cat.get_absolute_url }}">{{ category.blog_set.all|first }}</a></h2>
+                        </div>
+                        <div class="ms-thumb">
+                            <h3>{{ category }}</h3>
+                            <p>{{ category.blog_set.all|first }}</p>
+                        </div>
+                    </div>
+                {% endwith %}
+            {% endfor %}
+        </div>
+    </div>
+    <!-- End Master Slider -->
+
+
+    <div class="container">
+        <div class="row g-pt-50">
+            <div class="col-md-9 md-margin-bottom-50">
+                {% with object_list=page_obj.object_list %}
+                    {% for blog in object_list.all %}
+
+                        <!-- Blog Grid -->
+                        <div class="row margin-bottom-50">
+                            <div class="col-sm-4 sm-margin-bottom-20">
+                                <a class="r-more" href="{{ blog.get_absolute_url }}">
+                                    <img class="img-responsive" src="/media/{{ blog.images }}" alt="">
+                                </a>
+
+                            </div>
+                            <div class="col-sm-8">
+                                <div class="blog-grid">
+                                    <h3><a href="{{ blog.get_absolute_url }}">{{ blog.title }}</a></h3>
+                                    <ul class="blog-grid-info">
+                                        <li>{{ blog.category }}</li>
+                                        <li>{{ blog.author }}</li>
+                                        <li>{{ blog.time|date:"M d, Y" }}</li>
+                                        {#                                    <li><a href="#"><i class="fa fa-comments"></i> 0</a></li>#}
+                                    </ul>
+                                    <p>{{ blog.content_upload|safe|truncatechars:70 }}</p>
+                                    <a class="r-more" href="{{ blog.get_absolute_url }}">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Blog Grid -->
+                    {% endfor %}
+                {% endwith %}
+
+
+            </div>
+
+            <div class="col-md-3">
+                <div class="fb-page"
+                     data-href="https://www.facebook.com/&#x8607;&#x60e0;&#x73cd;&#x76ae;&#x819a;&#x79d1;&#x8a3a;&#x6240;-364805010383895/"
+                     data-tabs="timeline,messages"
+                     data-small-header="false"
+                     data-adapt-container-width="true"
+                     data-hide-cover="false"
+                     data-show-facepile="false">
+
+                </div>
+
+                <!-- Social Shares -->
+{#                <div class="margin-bottom-50">#}
+{#                    <h2 class="title-v4">Social</h2>#}
+{#                    <ul class="blog-social-shares">#}
+{#                        <li>#}
+{#                            <i class="rounded-x fb fa fa-facebook"></i>#}
+{#                            <a class="rounded-3x" href="#">Like</a>#}
+{#                            <span class="counter">31,702</span>#}
+{#                        </li>#}
+{#                        <li>#}
+{#                            <i class="rounded-x tw fa fa-twitter"></i>#}
+{#                            <a class="rounded-3x" href="#">Follow Us</a>#}
+{#                            <span class="counter">164,290</span>#}
+{#                        </li>#}
+{#                        <li>#}
+{#                            <i class="rounded-x gp fa fa-google-plus"></i>#}
+{#                            <a class="rounded-3x" href="#">Add to circle</a>#}
+{#                            <span class="counter">5,425,764</span>#}
+{#                        </li>#}
+{#                    </ul>#}
+{#                </div>#}
+                <!-- End Social Shares -->
+
+            </div>
+        <!-- Pager v4 -->
+                <div class="row">
+                    <div class="col-xs-12 text-center">
+                        {% bootstrap_pagination page_obj %}
+                    </div>
+                </div>
+                <!-- End Pager v4 -->
+        </div>
+    </div>
+
+
+
+
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v2.5&appId=185799531790979";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+
+
+{% endblock %}
+
+
+{% block JSblock %}
+    <script src="{% static 'plugins/counter/waypoints.min.js' %}"></script>
+    <script src="{% static 'plugins/counter/jquery.counterup.min.js' %}"></script>
+    <script src="{% static 'plugins/master-slider/masterslider/masterslider.js' %}"></script>
+    <script src="{% static 'plugins/master-slider/masterslider/jquery.easing.min.js' %}"></script>
+    <script src="{% static 'plugins/modernizr.js' %}"></script>
+    <script src="{% static 'plugins/login-signup-modal-window/js/main.js' %}"></script>
+    <script src="{% static 'js/plugins/master-slider-showcase4.js' %}"></script>
+
+    <script type="text/javascript" src="{% static 'ckeditor/ckeditor/ckeditor.js' %}"></script>
+    <script type="text/javascript" src="{% static "ckeditor/ckeditor-init.js" %}"></script>
+    <script src="http://****/media/ckeditor/ckeditor/ckeditor.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            MasterSliderShowcase4.initMasterSliderShowcase4();
+
+            {#            $('#content_upload1').#}
+        });
+    </script>
+{% endblock JSblock %}

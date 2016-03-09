@@ -1,0 +1,105 @@
+{% extends 'article_index_base.html'%}
+{% block title %} 蘇惠珍皮膚科診所 {% endblock %}
+{% load i18n static %}
+{% load staticfiles bootstrap3 %}
+{% block cssstyle1 %}
+    <style>
+
+
+
+    </style>
+{% endblock cssstyle1 %}
+
+{% block content %}
+    <div class="container g-pt-100">
+        <ul class="nav navbar-nav">
+            <li><a href="{% url 'blog_index' %}">文章首頁</a></li>
+
+            {% for category in categories %}
+                {% with cat=category.blog_set.all|first %}
+                    <li><a href="/blog/{{ category.pk }}">{{ category.name }}</a></li>
+                {% endwith %}
+            {% endfor %}
+
+        </ul>
+
+    </div>
+{#    <ul>#}
+{#        <li>page_obj: {{ page_obj }}</li>#}
+{#        <li>blog_list: {{ blog_list }}</li>#}
+{#        <li>object_list: {{ object_list }}</li>#}
+{#        <li>object: {{ object }}</li>#}
+{#        <li>blog_detail: {{ blog_detail }}</li>#}
+{#        <li>categories: {{ categories }}</li>#}
+{#        <li>categories.blog: {{ categories.blog_set.all|first }}</li>#}
+{#    </ul>#}
+    <div class="container">
+        <div class="row g-pt-50">
+            <div class="col-md-9 md-margin-bottom-50">
+                {% with category1=page_obj%}
+                    {% for blog in category1 %}
+
+                        <!-- Blog Grid -->
+                        <div class="row margin-bottom-50">
+                            <div class="col-sm-4 sm-margin-bottom-20">
+                                <a href="{{ blog.get_absolute_url }}">
+                                    <img class="img-responsive" src="/media/{{ blog.images }}" alt="">
+                                </a>
+                            </div>
+                            <div class="col-sm-8">
+                                <div class="blog-grid">
+                                    <h3><a href="{{ blog.get_absolute_url }}">{{ blog.title }}</a></h3>
+                                    <ul class="blog-grid-info">
+                                        <li>{{ blog.author }}</li>
+                                        <li>{{ blog.time }}</li>
+                                    </ul>
+                                    <p>{{ blog.content_upload|safe|truncatechars:33 }}</p>
+                                    <a class="r-more" href="{{ blog.get_absolute_url }}">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Blog Grid -->
+                    {% endfor %}
+                {% endwith %}
+
+
+            </div>
+
+            <div class="col-md-3">
+                <div class="fb-page"
+                     data-href="https://www.facebook.com/&#x8607;&#x60e0;&#x73cd;&#x76ae;&#x819a;&#x79d1;&#x8a3a;&#x6240;-364805010383895/"
+                     data-tabs="timeline,messages"
+                     data-small-header="false"
+                     data-adapt-container-width="true"
+                     data-hide-cover="false"
+                     data-show-facepile="false">
+
+                </div>
+
+            </div>
+            <!-- Pager v4 -->
+            <div class="row">
+                <div class="col-xs-12 text-center">
+                    {% bootstrap_pagination page_obj %}
+                </div>
+            </div>
+            <!-- End Pager v4 -->
+        </div>
+    </div>
+
+
+
+
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v2.5&appId=185799531790979";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+
+    {
+
+
+{% endblock content %}

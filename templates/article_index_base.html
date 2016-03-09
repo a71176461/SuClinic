@@ -1,0 +1,96 @@
+{% extends 'base.html'%}
+{% block title %} 蘇惠珍皮膚科診所 {% endblock %}
+{% load i18n static %}
+{% load staticfiles bootstrap3 %}
+
+{% block cssstyle %}
+    <link rel="stylesheet" href="{% static 'css/blog.style.css' %}">
+
+    <link rel="stylesheet" href="{% static 'plugins/master-slider/masterslider/style/masterslider.css' %}">
+    <link rel="stylesheet" href="{% static 'plugins/master-slider/masterslider/skins/black-2/style.css' %}">
+    <style>
+        .header-v6 .navbar-brand > a{
+            color: #FA82CC;
+        }
+        @media (max-width: 992px) {
+            .header-v6 .navbar-brand > a{
+                color: #FA82CC;
+            }
+        }
+        .header-v6 .navbar-nav > li > a{
+            color: #555;
+        }
+        .header-v6 .navbar-nav > li > a:hover {
+            color: #F739AE;
+        }
+        .header-v6.header-white-transparent .navbar {
+            background: rgba(0,0,0,.1);
+        }
+
+        .blog-slider span.blog-slider-badge {
+            background: #FA82CC;
+        }
+        a {
+            color: #FA82CC;
+        }
+        .nav > li > a:hover{
+            color: #FA82CC;
+        }
+        .r-more:hover{
+            color: #FA82CC;
+
+        }
+        .bg-dpink{
+            background-color: #FA82CC;
+        }
+        .btn-u.bg-dpink:hover{
+            background-color: white ;
+            border: 1px solid #FA82CC;
+{#            border-color: #FA82CC ;#}
+            color: #FA82CC;
+            -webkit-appearance: none;
+            -webkit-box-shadow: none;
+            -webkit-transition-delay: 0s;
+            -webkit-transition-duration: 0.3s;
+            -webkit-transition-property: all;
+            -webkit-transition-timing-function: ease-in-out;
+            text-align: center;
+            text-decoration: none;
+            text-shadow: none;
+            text-transform: none;
+            transition-delay: 0s;
+            transition-duration: 0.3s;
+            transition-property: all;
+            transition-timing-function: ease-in-out;
+            vertical-align: middle;
+        }
+
+        .pagination > .active > a,
+        .pagination > .active > span,
+        .pagination > .active > a:hover,
+        .pagination > .active > span:hover,
+        .pagination > .active > a:focus,
+        .pagination > .active > span:focus{
+            border-color: #FA82CC;
+            background-color: #FA82CC;
+        }
+        .active > a{
+            background: #FA82CC;
+
+        }
+        .pagination > li > a:hover {
+            color: #fff;
+            background: #F739AE;
+            border-color: #F739AE;
+        }
+    </style>
+    {% block cssstyle1 %}{% endblock cssstyle1 %}
+{% endblock cssstyle %}
+
+{% block content %}
+    {% block nav %}{% endblock nav %}
+
+
+    {% block content_blog %}{% endblock content_blog %}
+
+{% endblock content %}

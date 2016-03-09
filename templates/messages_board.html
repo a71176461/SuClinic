@@ -1,0 +1,304 @@
+{% extends 'article_index_base.html'%}
+{% block title %} 蘇惠珍皮膚科診所 {% endblock %}
+{% load i18n static %}
+{% load staticfiles bootstrap3 socialaccount %}
+
+{% block cssstyle1 %}
+    <style>
+
+        .time{
+            color: #555;
+        }
+
+        .testimonials-v6 .testimonials-info:hover{
+            border-color: #FA82CC;
+        }
+        .border-line{
+            border-top: 2px solid #E6E3E5;
+        }
+        .btn-facebook-inversed{
+            background-color: #4863ae;
+            border-color: #4863ae;
+            color: white;
+        }
+        .btn-facebook-inversed:hover{
+
+            background-color: white;
+            border-color: #4863ae;
+            color: #4863ae;
+            -webkit-appearance: none;
+            -webkit-box-shadow: none;
+            -webkit-transition-delay: 0s;
+            -webkit-transition-duration: 0.3s;
+            -webkit-transition-property: all;
+            -webkit-transition-timing-function: ease-in-out;
+            text-align: center;
+            text-decoration: none;
+            text-shadow: none;
+            text-transform: none;
+            transition-delay: 0s;
+            transition-duration: 0.3s;
+            transition-property: all;
+            transition-timing-function: ease-in-out;
+            vertical-align: middle;
+        }
+        .panel-heading{
+        {#            border-color: #FA82CC!important;#}
+            background: #FA82CC!important;
+        }
+        .shadow{
+            box-shadow: 0 10px 6px -6px #bbb;
+            border: 1px solid #eee;
+        {#            border-bottom: 1px solid #FACDE9;#}
+        }
+        .border-line-pink{
+            border-bottom: 1px solid #FACDE9;
+        }
+        .bg-spink{
+            background: #FFEDF6;
+        }
+        {#        .g-mb-10{#}
+        {#            margin-bottom: 10px;#}
+        {#        }#}
+        #id_content{
+            background: #FFEDF6;
+            border-color: #bbb;
+            width: 100%;
+        }
+        .text-color{
+            color: #555;
+        }
+
+
+
+    </style>
+{% endblock cssstyle1 %}
+
+{% block content %}
+
+    <div class="container g-pt-120">
+        <h2 class="pink">線上諮詢</h2>
+        <div class="row">
+            <div class="col-md-2">
+                <div class="panel panel-default shadow">
+                    <div class="panel-heading">
+                        {% if user.is_authenticated %}
+                            <h3>{{ user }}，您好</h3>
+                        {% else %}
+                            <h3>登入</h3>
+                        {% endif %}
+                    </div>
+                    <div class="panel-body">
+                        {% if user.is_authenticated %}
+                            <p>歡迎使用線上諮詢，請在下方留下您的訊息，我們將儘速回覆您的問題。</p>
+                            <a href="{% url 'account_logout' %}">登出</a>
+                        {% else %}
+                            <div class="socialaccount_ballot g-mb-10">
+
+                                <div class="socialaccount_providers">
+                                    {#                                    {% include "socialaccount/snippets/provider_list.html" with process="login" %}#}
+                                    <a class="btn btn-block rounded btn-facebook-inversed" href="{% provider_login_url 'facebook' method="oauth2" %}">
+                                        <i class="fa fa-facebook"></i>
+                                        Facebook
+                                    </a>
+                                </div>
+
+                                {#                            <div class="login-or">{% trans 'or' %}</div>#}
+
+                            </div>
+                            {#                        <div class="col-md-12">#}
+                            <a class="btn-u bg-dpink btn-block rounded g-mb-10" href="{% url 'account_login' %}">登入</a>
+                            {#                        </div>#}
+
+
+
+                            <a href="{% url 'account_signup' %}">若需要隱藏留言，請註冊</a>
+                        {% endif %}
+
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-6 col-md-offset-1">
+                {% if posts %}
+                    {% for post in page_obj %}
+
+                        {#                        <div class="container">#}
+                        <div class="row shadow rounded-bottom g-mb-50"
+                             style="{% if post.response %}border-bottom: 1px solid #FACDE9;{% endif %}">
+                            <div class="col-md-12 bg-spink">
+                                <div class="">
+                                    <p>#{{ post.pk }}</p>
+                                </div>
+                            </div>
+                            <div class="col-md-12 g-pt-10 g-ml-20">
+                                <div class="row g-mb-10">
+                                    <div class="col-md-6 ">
+                                        <strong class="pink g-pt-20">
+                                            {% if post.authenticated %}
+                                                {% if user.is_authenticated %}
+                                                    {% if post.name in user.username %}
+                                                        {{ post.name }}
+                                                    {% else %}
+                                                        隱藏
+                                                    {% endif %}
+                                                {% else %}
+                                                    隱藏
+                                                {% endif %}
+                                            {% else %}
+                                                {{ post.name }}
+                                            {% endif %}
+
+                                        </strong>
+                                    </div>
+                                    <div class="col-md-4 pull-right">
+                                        <span class="time">{{ post.date_time }}</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12 ">
+                                <p class="g-ml-30">
+                                    {% if post.authenticated %}
+                                        {% if user.is_authenticated %}
+                                            {% if post.name in user.username %}
+                                                {{ post.content }}
+                                            {% else %}
+                                                隱藏
+                                            {% endif %}
+                                        {% else %}
+                                            隱藏
+                                        {% endif %}
+                                    {% else %}
+                                        {{ post.content }}
+                                    {% endif %}
+                                </p>
+                            </div>
+                            {% if post.response %}
+                                <div class="col-md-12 bg-pink border-line  ">
+                                    <div class="g-ml-20 g-pt-20">
+                                        <strong class="">回覆：</strong>
+                                        <p class="g-pt-10 g-ml-30">
+                                            {{ post.response }}
+                                        </p>
+                                    </div>
+                                </div>
+                            {% else %}
+                            {% endif %}
+                        </div>
+
+                    {% endfor %}
+                    <!-- End Testimonials Wrap -->
+
+                {% else %}
+                    <p>nonono</p>
+                {% endif %}
+
+            </div>
+        </div>
+
+
+    </div>
+    <!-- Pager v4 -->
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 text-center">
+                {% bootstrap_pagination page_obj %}
+            </div>
+        </div>
+    </div>
+
+    <!-- End Pager v4 -->
+
+    <div class="container g-mb-50">
+        <div class="row">
+            {% if not user.is_authenticated %}
+                <div class="col-md-6 col-md-offset-3 text-center">
+                    <div class="socialaccount_ballot">
+
+                        <div class="socialaccount_providers">
+                            <a class="btn btn-block rounded btn-facebook-inversed" href="{% provider_login_url 'facebook' method="oauth2" %}">
+                                <i class="fa fa-facebook"></i>
+                                Facebook
+                            </a>
+                        </div>
+
+                        <div class="login-or">{% trans 'or' %}</div>
+
+                    </div>
+                    <a class="btn-u btn-u-default btn-block rounded" href="{% url 'account_login' %}">登入</a>
+
+                    {#                <a href="{% url 'account_logout' %}">登出</a>#}
+                    <a  href="{% url 'account_signup' %}">若需要隱藏留言，請註冊</a>
+                </div>
+            {% endif %}
+
+
+
+        </div>
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3 tab-pane fade in active">
+                <form action="" method="post" class="sky-form"> {% csrf_token %}
+
+                    <table class="table table-hover center">
+                        {#                                                {{ f.as_table }}#}
+
+                        <tr>
+                            <th> <label for="id_email"> 姓名： </label> </th>
+                            <td>
+                                {% if user.is_authenticated %}
+                                    {{ user }}
+                                    <div style="visibility: collapse;">{{ form.name }}</div>
+                                {% else %}
+                                    {{ form.name }}
+                                {% endif %}
+
+                            </td>
+                            <td> {{ form.name.errors }} </td>
+                        </tr>
+                        <tr>
+                            <th> <label for="id_content"> 內容： </label> </th>
+                            <td> {{ form.content }} </td>
+                            <td> {{ form.content.errors }} </td>
+                        </tr>
+                        <tr>
+                            <th> <label for="id_captcha"> 驗證碼： </label> </th>
+                            <td> {{ form.captcha }} <button id='js-captcha-refresh'>refresh</button></td>
+                            <td> {% if form.captcha.errors == 'Invalid CAPTCHA' %}asdas{% endif %}{{ form.captcha.errors }}</td>
+                        </tr>
+                    </table>
+                    <button class="btn-u btn-u-default" type="submit" value="給予評價">給予評價</button>
+
+                </form>
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+{% endblock content %}
+
+{% block JSblock %}
+    <script type="text/javascript">
+        jQuery(document).ready(function() {
+            // Add refresh button after field (this can be done in the template as well)
+
+            // Click-handler for the refresh-link
+            $('#js-captcha-refresh').click(function(){
+                var $form = $(this).parents('form');
+                var url = location.protocol + "//" + window.location.hostname + ":"
+                        + location.port + "/captcha/refresh/";
+
+                // Make the AJAX-call
+                $.getJSON(url, {}, function(json) {
+                    $form.find('input[name="captcha_0"]').val(json.key);
+                    $form.find('img.captcha').attr('src', json.image_url);
+                });
+
+                return false;
+            });
+
+        });
+    </script>
+{% endblock %}

@@ -1,0 +1,676 @@
+{% extends 'base.html'%}
+{% block title %} 蘇惠珍皮膚科診所 {% endblock %}
+{% load i18n static %}
+
+{% block cssstyle %}
+    {#    <link rel="stylesheet" href="{% static 'plugins/layer-slider/layerslider/css/layerslider.css' %}">#}
+    <link rel="stylesheet" href="{% static 'plugins/revolution-slider/rs-plugin/css/settings.css' %}">
+    <link rel="stylesheet" href="{% static 'css/wealth.style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/line-icons-pro/styles.css' %}">
+
+
+    <style>
+        {#        .header-v6 {#}
+        {#	        z-index: 9999;#}
+        {#	        position: relative;#}
+        {#        }#}
+
+        {#                .header-fixed .header-v6.header-sticky {#}
+        {#        		top: 0;#}
+        {#        		left: 0;#}
+        {#        		width: 100%;#}
+        {#        		height: auto;#}
+        {#        		    z-index: 999 !important;#}
+        {#        		    position: fixed;#}
+        {#        	    }#}
+
+        {#        .tp-leftarrow.default		{#}
+        {#            z-index:1 !important;#}
+        {#            cursor:pointer;#}
+        {#            position: relative;#}
+        {#            background: url({% static 'plugins/revolution-slider/rs-plugin/assets/large_left.png' %}) no-Repeat top left;#}
+        {#            width:40px;	height:40px;#}
+        {#            margin-right:0px; float:left; margin-top:0px;#}
+        {#        }#}
+        {#        .tp-rightarrow.default	{#}
+        {#            z-index:1;#}
+        {#            cursor:pointer;#}
+        {#            position:relative;#}
+        {#            background:url({% static 'plugins/revolution-slider/rs-plugin/assets/large_right.png' %}) no-Repeat top left;#}
+        {#            width:40px;	height:40px;#}
+        {#            margin-right:0px; float:left;	margin-top:0px;#}
+        {#        }#}
+
+
+        a {
+            color: #FA82CC;
+            text-decoration: none;
+        }
+        .pink{
+            color: #FA82CC;
+        }
+        .bg-pink{
+            background-color: #FACDE9;
+        }
+        .bg-dpink{
+            background-color: #FA82CC;
+        }
+
+        .g-color-default { color: #FA82CC;}
+
+        .g-bg-white{ background-color: #fff;}
+        .g-bg-dark{ background-color: #333;}
+        .g-heading-v9:after {
+            border-bottom: 1px solid #FA82CC;
+        }
+
+        .g-bg-default-color,
+        .g-bg-default-color:focus {
+            background: #FA82CC;
+            color: #fff;
+        }
+        ::selection {
+            color: #fff;
+            background: #FA82CC;
+        }
+
+
+        .features-item--big {
+            overflow: hidden;
+            position: relative;
+            background: url({% static 'Images/IMG_0360-min.JPG' %}) no-repeat scroll 50% 0 / cover;
+            background-size: 100% 100%;
+            transition: all .5s;
+        }
+
+
+        table td:hover{
+            background-color: #f8da4e;
+        }
+
+
+        .content-25{
+            margin-top: 25px;
+            margin-bottom: 25px;
+        }
+        .lists-v2 i{
+            color: #FA82CC;
+        }
+
+    </style>
+{% endblock %}
+
+
+
+{% block content %}
+    <div >
+
+
+
+
+        <!--=== Slider ===-->
+        <div class="tp-banner-container">
+            <div class="tp-banner">
+                <ul>
+                    <!-- SLIDE -->
+                    <li class="revolution-mch-1" data-transition="fade" data-slotamount="5" data-masterspeed="1000" data-title="Slide 1">
+                        <!-- MAIN IMAGE -->
+                        <img src="{% static 'Images/IMG_0306-min.JPG' %}"  alt="darkblurbg"  data-bgfit="cover" data-bgposition="left top" data-bgrepeat="no-repeat">
+
+                        <!-- LAYER -->
+                        <div class="tp-caption revolution-ch1 sft start "
+                             data-x="500"
+                             data-hoffset="0"
+                             data-y="120"
+                             data-speed="1400"
+                             data-start="300"
+                             data-easing="Power4.easeOut"
+                             data-endspeed="100"
+                             data-endeasing="Power1.easeIn"
+                                {#                        data-captionhidden="off"#}
+                             style="font-size: 50px; z-index: 6">
+                            <strong class="pink">{% trans '您的肌膚，我們在乎' %}</strong>
+                        </div>
+
+
+                        <div class="tp-caption revolution-ch2 sft "
+                             data-x="600"
+                             data-hoffset="0"
+                             data-y="200"
+                             data-speed="1500"
+                             data-start="500"
+                             data-easing="Back.easeInOut"
+                             data-endeasing="Power1.easeIn"
+                             data-endspeed="300">
+                            <i class="fa fa-chevron-circle-right" style=" color: #fff; font-size: 24px; top:70px; left: 40px; slidedirection : left; slideoutdirection : top; durationin : 1500; durationout : 500; "></i>
+
+                        <span class="ls-s-2" style=" color: #fff; font-weight: 400; font-size: 22px; top:70px; left: 70px; slidedirection : top; slideoutdirection : bottom; durationin : 1500; durationout : 500; ">
+                            {% trans '一般皮膚病' %}
+                        </span>
+                            <br>
+
+                            <i class="fa fa-chevron-circle-right" style=" color: #fff; font-size: 24px; top:70px; left: 40px; slidedirection : left; slideoutdirection : top; durationin : 1500; durationout : 500; "></i>
+
+                        <span class="ls-s-2" style=" color: #fff; font-weight: 400; font-size: 22px; top:70px; left: 70px; slidedirection : top; slideoutdirection : bottom; durationin : 1500; durationout : 500; ">
+                            {% trans '小兒皮膚病' %}
+                        </span>
+                            <br>
+                            <i class="fa fa-chevron-circle-right" style=" color: #fff; font-size: 24px; top:70px; left: 40px; slidedirection : left; slideoutdirection : top; durationin : 1500; durationout : 500; "></i>
+
+                        <span class="ls-s-2" style=" color: #fff; font-weight: 400; font-size: 22px; top:70px; left: 70px; slidedirection : top; slideoutdirection : bottom; durationin : 1500; durationout : 500; ">
+                            {% trans '過敏性皮膚病' %}
+                        </span>
+                            <br>
+
+                            <i class="fa fa-chevron-circle-right" style=" color: #fff; font-size: 24px; top:70px; left: 40px; slidedirection : left; slideoutdirection : top; durationin : 1500; durationout : 500; "></i>
+
+                        <span class="ls-s-2" style=" color: #fff; font-weight: 400; font-size: 22px; top:70px; left: 70px; slidedirection : top; slideoutdirection : bottom; durationin : 1500; durationout : 500; ">
+                            {% trans '醫學美容' %}
+                        </span>
+
+                            <i class="fa fa-chevron-circle-right" style=" color: #fff; font-size: 24px; top:70px; left: 40px; slidedirection : left; slideoutdirection : top; durationin : 1500; durationout : 500; "></i>
+
+                        <span class="ls-s-2" style=" color: #fff; font-weight: 400; font-size: 22px; top:70px; left: 70px; slidedirection : top; slideoutdirection : bottom; durationin : 1500; durationout : 500; ">
+                            {% trans '雷射美容' %}
+                        </span>
+
+
+                        </div>
+
+
+                    </li>
+                    <!-- END SLIDE -->
+
+                    <!-- SLIDE -->
+                    <li class="revolution-mch-1" data-transition="fade" data-slotamount="5" data-masterspeed="1000" data-title="Slide 2">
+                        <!-- MAIN IMAGE -->
+                        <img src="{% static 'Images/IMG_0331-min.JPG' %}"  alt="darkblurbg"  data-bgfit="cover" data-bgposition="left top" data-bgrepeat="no-repeat">
+
+                        <div class="tp-caption revolution-ch1 sft start text-center"
+                             data-x="center"
+                             data-hoffset="0"
+                             data-y="200"
+                             data-speed="1500"
+                             data-start="500"
+                             data-easing="Back.easeInOut"
+                             data-endeasing="Power1.easeIn"
+                             data-endspeed="300">
+                            <strong>{% trans '真正從裡到外，' %}</strong><br/>
+                            <strong>{% trans '解開' %}</strong>
+                            <strong class="pink" style="background-color: rgba(0,0,0,0.5);">{% trans '人體生化體質 ' %}</strong>
+                            <strong>{% trans '與' %}</strong>
+                            <strong class="pink" style="background-color: rgba(0,0,0,0.5);">{% trans '抗衰老因子 ' %}</strong>
+
+                        </div>
+
+
+                    </li>
+                    <!-- END SLIDE -->
+
+                </ul>
+                <div class="tp-bannertimer tp-bottom"></div>
+            </div>
+        </div>
+        <!--=== End Slider ===-->
+
+
+
+        <!-- Section -->
+        <section class="container g-pt-70 g-pb-70">
+            <div class="row g-mb-50 text-center">
+                <div class="col-md-6 col-md-offset-3 col-sm-10 col-sm-offset-2">
+                    <div class="g-heading-v9 text-center g-mb-40">
+                        <h2>關於我們</h2>
+                    </div>
+                    <p class="margin-40">愛漂亮是人的天性，如何常保年輕一直是大家所追求的夢想。<br>隨著現代人長期生活在高度氧化的環境中，如何能保護自己的身體器官和皮膚功能不受到傷害，且能保持年輕和活力是現代人最重要的課題。</p>
+                    <p>蘇醫師將生化抗衰老工程和皮膚科醫學專業結合。真正從裡到外，解開人體生化體質和抗衰老因子的秘密。</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 col-sm-4 col-xs-4 col-2xs-12 g-mb-30 text-center">
+                    <i class="icon-lg g-color-default icon-medical-071"></i>
+                    <h4>專業醫療保健</h4>
+                    <p>提供專業的醫療人員讓您的肌膚得到專業的診療</p>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-4 col-2xs-12 g-mb-30 text-center">
+                    <i class="icon-lg g-color-default icon-medical-073"></i>
+                    <h4>專業醫療方案</h4>
+                    <p>提供專業的醫療程序和診療方案，讓您的肌膚得到專業的照護。</p>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-4 col-2xs-12 g-mb-30 text-center">
+                    <i class="icon-lg g-color-default icon-medical-067"></i>
+                    <h4>專業機器設備</h4>
+                    <p>本診所持有合法且專業的醫療設備</p>
+                </div>
+
+            </div>
+        </section>
+        <!-- End Section -->
+
+        <!-- Section -->
+        <section class="g-bg-gray g-pt-100 g-pb-100">
+            <div class="container">
+                <div class="row g-mb-40 text-center">
+                    <div class="col-md-5 col-sm-5">
+                        <img src="{% static 'Images/IMG_1.jpg' %}" class="img-responsive">
+                    </div>
+                    <div class="col-md-7 col-sm-7 ">
+                        <div class="g-heading-v9 text-center">
+                            <h2>我們的主治項目</h2>
+                        </div>
+                        <div class="row g-mt-20">
+                            <div class="col-md-4 col-md-offset-2 col-sm-4 col-sm-offset-2 col-xs-6">
+                                <ul class="list-unstyled lists-v2 margin-bottom-30">
+                                    <li>
+                                        <i class="fa fa-check"></i>
+                                        疣
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-check"></i>
+                                        面疱
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-check"></i>
+                                        汗斑
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-check"></i>
+                                        黑斑
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-check"></i>
+                                        濕疹
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-check"></i>
+                                        頑癬
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-check"></i>
+                                        疥瘡
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-check"></i>
+                                        青春痘
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="col-md-4 col-sm-4 col-xs-6">
+                                <ul class="list-unstyled lists-v2 margin-bottom-30">
+
+                                    <li>
+                                        <i class="fa fa-check"></i>
+                                        富貴手
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-check"></i>
+                                        香港腳
+                                    </li>
+
+                                    <li>
+                                        <i class="fa fa-check"></i>
+                                        昆蟲咬傷
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-check"></i>
+                                        電燒治療
+                                    </li>
+
+                                    <li>
+                                        <i class="fa fa-check"></i>
+                                        小兒皮膚病
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-check"></i>
+                                        牛皮癬(乾癬)
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-check"></i>
+                                        過敏性皮膚病
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-check"></i>
+                                        指甲、毛髮疾病等等
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End Section -->
+
+        <!-- Section -->
+        <section class="g-pt-100 " id="clinicTime">
+            <div class="container">
+                <div class="row g-mb-50 text-center">
+                    <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
+                        <div class="g-heading-v9 text-center g-mb-40">
+                            <h2>醫師看診時間表</h2>
+                        </div>
+                        <h4 class="pink">{% trans '預約電話：02-28383090' %}</h4>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
+                        <table class="table table-hover">
+                            <thead>
+                            <tr>
+                                <td class="g-bg-gray">時間</td>
+                                <td class="g-bg-gray">星期一</td>
+                                <td class="g-bg-gray">星期二</td>
+                                <td class="g-bg-gray">星期三</td>
+                                <td class="g-bg-gray">星期四</td>
+                                <td class="g-bg-gray">星期五</td>
+                                <td class="g-bg-gray">星期六</td>
+                                <td class="g-bg-gray">星期日/例假日</td>
+
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td class="g-bg-gray">下午3:00~6:00</td>
+                                <td class="bg-pink">蘇惠珍</td>
+                                <td class="bg-dpink g-color-white">章蕙菁</td>
+                                <td class="bg-pink">蘇惠珍</td>
+                                <td class="bg-dpink g-color-white">章蕙菁</td>
+                                <td class="bg-pink">蘇惠珍</td>
+                                <td class="bg-dpink g-color-white">章蕙菁</td>
+                                <td class="g-bg-gray">休診</td>
+                            </tr>
+                            <tr>
+                                <td class="g-bg-gray">晚上7:00~9:30</td>
+                                <td class="bg-pink">蘇惠珍</td>
+                                <td class="bg-dpink g-color-white">章蕙菁</td>
+                                <td class="bg-pink">蘇惠珍</td>
+                                <td class="bg-dpink g-color-white">章蕙菁</td>
+                                <td class="bg-pink">蘇惠珍</td>
+                                <td class="g-bg-gray">休診</td>
+                                <td class="g-bg-gray">休診</td>
+                            </tr>
+                            </tbody>
+
+                        </table>
+                    </div>
+                </div>
+
+
+                <div class="row g-mb-50">
+                    <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
+
+                        <h3>
+                            <span class="item">
+                                <i class="fa fa-file-o"></i>
+                            </span>
+                            如果您是從未至本院看診，則須以初診掛號辦理。
+                        </h3>
+                        <p>
+                            看診當日攜帶身分證及健保卡至一樓掛號櫃台填寫初診資料表，填寫完成後至掛號收費櫃台報導，完成掛號手續後至診間就診。
+                        </p>
+
+                        <h3>
+                            <span class="item">
+                                <i class="fa fa-calendar-plus-o"></i>
+                            </span>
+                            提供複診客人電話預約掛號
+                        </h3>
+
+                        <p>
+                            <span class="pink">服務時間每日下午3:30~晚上9:00</span>，額滿為止，為避免台端看診久後，
+                            依個別醫師過去看診速度預估(建議到時間)惟因病人病況不同，實際看診順序以診間燈號為準，<span class="pink">並請避免集中於門診結束到診造成壅塞</span>。
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End Section -->
+
+        <!-- Section -->
+        <section class="g-bg-gray g-mt-50 g-pt-70 features ">
+            <div class="container">
+                <div class="row equal-height-columns g-mt-20">
+                    <div class="g-heading-v9 text-center g-mb-20">
+                        <h2>醫美療程</h2>
+                    </div>
+
+
+
+                    <!-- Col 2 -->
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 col-2xs-12 equal-height-column">
+                        <div class="features-item g-bg-white  g-mb-30 rounded">
+                            <i class="icon-lg g-color-default icon-medical-047"></i>
+                            <h4>美容商品</h4>
+                            <p>提供美容相關的產品，包括面膜、保濕乳液、防曬乳液等等。</p>
+                        </div>
+
+                        <div class="features-item g-bg-white g-sm-mb-30 rounded">
+                            <i class="icon-lg g-color-default icon-medical-010"></i>
+                            <h4>量身療程</h4>
+                            <p>依照您的實際狀況量身定制您的療程。</p>
+                        </div>
+                    </div>
+                    <!-- End Col 2 -->
+
+                    <!-- Col 3 -->
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 col-2xs-12 equal-height-column">
+                        <div class="features-item g-bg-white g-mb-30 rounded">
+                            <i class="icon-lg g-color-default icon-medical-038"></i>
+                            <h4>專業諮詢</h4>
+                            <p>提供專業的美容諮詢</p>
+                        </div>
+
+                        <div class="features-item g-bg-white g-sm-mb-30 rounded">
+                            <i class="icon-lg g-color-default icon-medical-026"></i>
+                            <h4>專業設備</h4>
+                            <p>提供優質的機器設備以及舒適環境。</p>
+                        </div>
+                    </div>
+                    <!-- End Col 3 -->
+                    {#                     </div>#}
+
+                    <!-- Col 1 -->
+                    <div class="col-lg-6 col-md-6">
+                        <div class="features-item--big g-mb-30 rounded equal-height-column">
+                            <div class="features-item--big-info">
+                                <i class="icon-lg g-color-default icon-medical-087"></i>
+                                <h4>我們提供最頂級的療程服務給您</h4>
+                                <p>依照您的肌膚，提供您最高品質的療程服務，讓您的肌膚得到最好的療程效果，重現您的美麗動人。</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Col 1 -->
+                </div>
+            </div>
+        </section>
+        <!-- End Section -->
+
+        <!-- Section -->
+        <section class=" g-pt-70">
+            <div class="container">
+                <div class="row g-mb-50 text-center ">
+                    <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
+                        <div class="g-heading-v9 text-center g-mb-40">
+                            <h2>醫療團隊</h2>
+                        </div>
+                        <p>為傳達我們醫療團隊對皮膚的關心和愛，我們的團隊致力於讓病人的皮膚得到最好的照護。</p>
+                    </div>
+                </div>
+
+                <div class="tab-v7  g-mb-50">
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane fade in active" id="doc1">
+                            <div class="row">
+                                <div class="col-xs-6 col-xs-push-6 col-2xs-12 col-2xs-push-0">
+                                    <div class="g-heading-v9 g-mb-30">
+                                        <h3>蘇惠珍 醫師</h3>
+                                        <span class="g-color-default">院長</span>
+                                    </div>
+                                    {#                                    <p class="g-mb-20">Duis aute irure dolor in reprehenderit in voluptate velit cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpaqui.</p>#}
+                                    <p class="g-mb-20">病人的皮膚是我們共同努力的目標，我將病人當作自己一樣呵護跟照料。</p>
+                                </div>
+                                <div class="col-xs-5 col-xs-pull-6 col-2xs-12 col-2xs-pull-0 responsive">
+                                    <img src="{% static 'Images/IMG_0308_2-min.JPG' %}" alt="" class="img-responsive">
+                                </div>
+                            </div>
+                        </div>
+                        <div role="tabpanel" class="tab-pane fade" id="doc2">
+                            <div class="row">
+                                <div class="col-xs-6 col-xs-push-6 col-2xs-12 col-2xs-push-0">
+                                    <div class="g-heading-v9 g-mb-30">
+                                        <h3>Sara Lisbon</h3>
+                                        <span class="g-color-default">Phd in Healthcare</span>
+                                    </div>
+                                    <p class="g-mb-30">Excepteur sint occaecat cupidatat non proident, sunt in culpaqui.Duis aute irure dolor in reprehenderit in voluptate velit cillum dolore eu fugiat nulla pariatur.</p>
+                                </div>
+                                <div class="col-xs-5 col-xs-pull-6 col-2xs-12 col-2xs-pull-0 responsive">
+                                    <img src="" alt="" class="img-responsive">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 col-md-push-6">
+                                <!-- Nav tabs -->
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li role="presentation" class="active"><a href="#doc1" aria-controls="doc1" role="tab" data-toggle="tab"><img src="{% static 'Images/IMG_0308_2s.JPG' %}" alt=""></a></li>
+                                    <li role="presentation"><a href="#doc2" aria-controls="doc2" role="tab" data-toggle="tab"><img src="" alt=""></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End Section -->
+
+
+
+        <!-- Section -->
+        <section class="g-bg-gray g-pt-100">
+            <div class="container">
+                <div class="row g-mb-50 text-center ">
+                    <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
+                        <div class="g-heading-v9 text-center ">
+                            <h2>和我們聯絡</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row text-center">
+
+                    <div class="">
+                        <h1>
+                            <span aria-hidden="true" class="icon-call-in"></span>
+                            02-2838-3090
+                        </h1>
+                    </div>
+                    <div class="">
+                        <h1>
+                            <span aria-hidden="true" class="icon-globe"></span>
+                            台北市士林區忠義街83號
+                        </h1>
+                    </div>
+                    <div class="">
+                        <h1>
+                            <span aria-hidden="true" class="icon-social-facebook"></span>
+                            <a href="https://www.facebook.com/蘇惠珍皮膚科診所-364805010383895/">蘇惠珍皮膚科診所</a>
+                        </h1>
+
+                    </div>
+
+                </div>
+            </div>
+            <div class="container-fluid no-padding">
+                <!-- Google Map -->
+                <div id="map" class="map-class g-mb-70"></div>
+            </div>
+        </section>
+        <!-- End Section -->
+
+
+        <!-- Section -->
+        <section class="g-bg-gray g-pb-40">
+            <div class="container">
+                <div class="row g-mb-50 ">
+                    <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
+                        <div class="g-heading-v9 text-center ">
+                            <h2 >交通資訊</h2>
+                        </div>
+                    </div>
+                    <div class="col-md-5 col-md-offset-4 col-sm-12">
+                        <ul>
+                            <li class="">
+                                搭乘公車：
+                                <ul>
+                                    <li>雨農國小站：紅12、203、279、285、606、646</li>
+                                    <li>陽明醫院站：紅15、645、685</li>
+                                </ul>
+                            </li>
+                            <li>步行：搭乘捷運淡水線至芝山捷運站一號出口左轉接福國路，直行至中山北路六段左轉後，右轉至忠誠路一段，直行至第二個路口，右轉忠義街看到雨農國小，再步行5分鐘即可到達，總步行時間約15分鐘。</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+        <!-- End Section -->
+
+
+
+
+    </div>
+
+
+{% endblock %}
+
+{% block JSblock %}
+    <script src="{% static 'plugins/counter/waypoints.min.js' %}"></script>
+    <script src="{% static 'plugins/counter/jquery.counterup.min.js' %}"></script>
+    <script src="{% static 'plugins/fancybox/source/jquery.fancybox.pack.js' %}"></script>
+    <script src="{% static 'plugins/owl-carousel/owl-carousel/owl.carousel.js' %}"></script>
+    <script src="{% static 'js/plugins/fancy-box.js' %}"></script>
+
+
+    <script src="{% static 'js/plugins/revolution-slider.js' %}"></script>
+    <script src="{% static 'plugins/revolution-slider/rs-plugin/js/jquery.themepunch.revolution.min.js' %}"></script>
+    <script src="{% static 'plugins/revolution-slider/rs-plugin/js/jquery.themepunch.tools.min.js' %}"></script>
+    <script src="{% static 'js/plugins/owl-recent-works.js' %}"></script>
+
+
+    <script src="https://maps.googleapis.com/maps/api/js?signed_in=true&amp;callback=initMap" async defer></script>
+    <script src="{% static 'js/gmaps-ini.js' %}"></script>
+
+    <script type="text/javascript">
+        jQuery(document).ready(function() {
+            $('image').lazyload();
+            jQuery('.tp-banner').revolution(
+                    {
+                        delay:5000,
+                        startwidth:1170,
+                        startheight:630,
+                        hideThumbs:10
+                    });
+        });
+    </script>
+    <script>
+        $(function () {
+            /* smooth scrolling sections */
+            $('a[href*=#]:not([href=#])').click(function() {
+                if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+                    var target = $(this.hash);
+                    target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+                    if (target.length) {
+                        $('html,body').animate({
+                            scrollTop: target.offset().top
+                        }, 1000);
+                        return false;
+                    }
+                }
+            });
+        });
+    </script>
+{% endblock %}

@@ -1,0 +1,115 @@
+{% extends 'base.html'%}
+{% block title %} 蘇惠珍皮膚科診所 {% endblock %}
+{% load i18n static %}
+
+{% block cssstyle %}
+    <style>
+        .header-v6 .navbar-brand > a{
+            color: #FA82CC;
+        }
+        @media (max-width: 992px) {
+            .header-v6 .navbar-brand > a{
+                color: #FA82CC;
+            }
+        }
+        .header-v6 .navbar-nav > li > a{
+            color: #555;
+        }
+        .header-v6 .navbar-nav > li > a:hover {
+            color: #F739AE;
+        }
+        .header-v6.header-white-transparent .navbar {
+            background: rgba(0,0,0,.1);
+        }
+    </style>
+{% endblock cssstyle %}
+
+{% block content %}
+    <!-- Section -->
+        <section class="g-pt-120 ">
+            <div class="container">
+                <div class="row g-mb-50 text-center">
+                    <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
+                        <div class="g-heading-v9 text-center g-mb-40">
+                            <h2>醫師看診時間表</h2>
+                        </div>
+                        <h4 class="pink">{% trans '預約電話：02-28383090' %}</h4>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
+                        <table class="table table-hover">
+                            <thead>
+                            <tr>
+                                <td class="g-bg-gray">時間</td>
+                                <td class="g-bg-gray">星期一</td>
+                                <td class="g-bg-gray">星期二</td>
+                                <td class="g-bg-gray">星期三</td>
+                                <td class="g-bg-gray">星期四</td>
+                                <td class="g-bg-gray">星期五</td>
+                                <td class="g-bg-gray">星期六</td>
+                                <td class="g-bg-gray">星期日/例假日</td>
+
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td class="g-bg-gray">下午3:00~6:00</td>
+                                <td class="bg-pink">蘇惠珍</td>
+                                <td class="bg-dpink g-color-white">章蕙菁</td>
+                                <td class="bg-pink">蘇惠珍</td>
+                                <td class="bg-dpink g-color-white">章蕙菁</td>
+                                <td class="bg-pink">蘇惠珍</td>
+                                <td class="bg-dpink g-color-white">章蕙菁</td>
+                                <td class="g-bg-gray">休診</td>
+                            </tr>
+                            <tr>
+                                <td class="g-bg-gray">晚上7:00~9:30</td>
+                                <td class="bg-pink">蘇惠珍</td>
+                                <td class="bg-dpink g-color-white">章蕙菁</td>
+                                <td class="bg-pink">蘇惠珍</td>
+                                <td class="bg-dpink g-color-white">章蕙菁</td>
+                                <td class="bg-pink">蘇惠珍</td>
+                                <td class="g-bg-gray">休診</td>
+                                <td class="g-bg-gray">休診</td>
+                            </tr>
+                            </tbody>
+
+                        </table>
+                    </div>
+                </div>
+
+
+                <div class="row g-mb-50">
+                    <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
+
+                        <h3>
+                            <span class="item">
+                                <i class="fa fa-file-o"></i>
+                            </span>
+                            如果您是從未至本院看診，則須以初診掛號辦理。
+                        </h3>
+                        <p>
+                            看診當日攜帶身分證及健保卡至一樓掛號櫃台填寫初診資料表，填寫完成後至掛號收費櫃台報導，完成掛號手續後至診間就診。
+                        </p>
+
+                        <h3>
+                            <span class="item">
+                                <i class="fa fa-calendar-plus-o"></i>
+                            </span>
+                            提供複診客人電話預約掛號
+                        </h3>
+
+                        <p>
+                            <span class="pink">服務時間每日下午3:30~晚上9:00</span>，額滿為止，為避免台端看診久後，
+                            依個別醫師過去看診速度預估(建議到時間)惟因病人病況不同，實際看診順序以診間燈號為準，<span class="pink">並請避免集中於門診結束到診造成壅塞</span>。
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End Section -->
+
+{% endblock content %}

@@ -1,0 +1,20 @@
+{% extends 'article_index_base.html'%}
+{% block title %} 蘇惠珍皮膚科診所 {% endblock %}
+{% load i18n static %}
+{% load staticfiles bootstrap3 %}
+
+{% block nav %}
+    <div class="container" style="padding-top: 100px;position: relative;">
+
+        <ul class="nav navbar-nav">
+
+            <li><a href="{% url 'blog_index' %}">全部</a></li>
+{#        {% with object_list=page_obj.object_list %}#}
+
+            {% for categories in category %}
+                <li><a href="#">1{{ categories.name }}</a></li>
+            {% endfor %}
+{#        {% endwith %}#}
+        </ul>
+    </div>
+{% endblock nav %}

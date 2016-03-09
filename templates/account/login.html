@@ -1,0 +1,67 @@
+{% extends "article_index_base.html" %}
+
+{% load i18n %}
+{% load account socialaccount %}
+
+{% block head_title %}{% trans "Sign In" %}{% endblock %}
+
+{% block content %}
+
+    <div class="g-pt-150"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <div class="col-md-8 col-sm-8 col-xs-8 col-md-offset-2 col-sm-offset-2 col-xs-offset-2 text-center">
+                <h1>{% trans "Sign In" %}</h1>
+
+                {% get_providers as socialaccount_providers %}
+
+                {% if socialaccount_providers %}
+                    <p>{% blocktrans with site.name as site_name %}若您尚無帳號，請先 <a href="{{ signup_url }}">註冊</a>
+                    {% endblocktrans %}</p>
+
+                    <div class="socialaccount_ballot">
+
+                        <div class="socialaccount_providers">
+                            <a class="btn btn-block rounded btn-facebook-inversed" href="{% provider_login_url 'facebook' method="oauth2" %}">
+                                <i class="fa fa-facebook"></i>
+                                Facebook
+                            </a>
+                        </div>
+
+                        <div class="login-or">{% trans 'or' %}</div>
+
+                    </div>
+
+
+                    {% include "socialaccount/snippets/login_extra.html" %}
+
+                {% else %}
+                    <p>{% blocktrans %}若您尚無帳號，請先
+                        <a href="{{ signup_url }}">註冊</a>{% endblocktrans %}</p>
+                {% endif %}
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 col-sm-6 col-xs-6 col-md-offset-3 col-sm-offset-3 col-xs-offset-3">
+                        <form class="login" method="POST" action="{% url 'account_login' %}">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    {% if redirect_field_value %}
+                        <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+                    {% endif %}
+                    <a class="button secondaryAction" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
+                    <button class="btn-u bg-dpink rounded " type="submit">{% trans "Sign In" %}</button>
+                </form>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+    <div style="padding-bottom: 30vh;"></div>
+
+
+{% endblock %}
