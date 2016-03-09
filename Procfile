@@ -1,1 +1,1 @@
-web: gunicorn --pythonpath SuClinic.wsgi
+web: gunicorn SuClinic.wsgi --log-file -
