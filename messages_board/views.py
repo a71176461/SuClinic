@@ -48,6 +48,7 @@ class PostView(FormView, ListView):
                 name=form.cleaned_data['name'],
                 content=form.cleaned_data['content'],
             )
+
         kwargs['object_list'] = Post.objects.all()
         self.object_list = Post.objects.all()
         return self.render_to_response(
@@ -55,8 +56,17 @@ class PostView(FormView, ListView):
                 form=self.form_class(initial=self.initial), )
         )
 
+    # def form_invalid(self, form):
+    #
+    #     self.object_list = Post.objects.all()
+    #     return self.render_to_response(
+    #         self.get_context_data(
+    #             form=self.form_class(), )
+    #     )
+
     def get_context_data(self, **kwargs):
         kwargs['object_list'] = Post.objects.all()
+        self.object_list = Post.objects.all()
         context = super(PostView, self).get_context_data(**kwargs)
         context.update({
             'posts': Post.objects.all(),
