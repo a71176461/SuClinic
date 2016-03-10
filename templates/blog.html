@@ -65,6 +65,11 @@
 {% block content %}
     <div class="fuild-container ">
         <div class="relative">
+            {% if blog_detail.cropping %}
+                somthing
+            {% else %}
+                nothing
+            {% endif %}
             <img src="{% cropped_thumbnail blog_detail 'cropping' %}" class="img-responsive imageTop" >
             <div class="relative container" style="z-index:10;top: -120px;">
                 <span class="h2 col-md-offset-1">{{ blog_detail.title }}</span>
