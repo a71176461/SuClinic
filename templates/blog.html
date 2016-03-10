@@ -68,7 +68,7 @@
             {% if not blog_detail.crop %}
                 <img id="img" src="{% static 'Images/kaboompics.com_Young woman relaxing at home and reading a book.jpg' %}" class="img-responsive">
             {% else %}
-                <img id="img" src="{% static 'Images/kaboompics.com_Young woman relaxing at home and reading a book.jpg' %}" class="img-responsive">
+                <img src="{% cropped_thumbnail blog_detail 'cropping' %}" class="img-responsive imageTop" >
             {% endif %}
 {#            <img src="{% cropped_thumbnail blog_detail 'cropping' %}" class="img-responsive imageTop" >#}
             <div class="relative container" style="z-index:10;top: -120px;">
