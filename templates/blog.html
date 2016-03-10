@@ -58,6 +58,10 @@
         {#        #bgtask{#}
         {#            background: rgba(0,0,0,.1);#}
         {#        }#}
+        #img{
+            height: 650px;
+            width: 1920px;
+        }
     </style>
 {% endblock cssstyle1 %}
 
@@ -65,12 +69,12 @@
 {% block content %}
     <div class="fuild-container ">
         <div class="relative">
-            {% if blog_detail.cropping %}
-                somthing
+            {% if blog_detail.images %}
+                <img src="{% cropped_thumbnail blog_detail 'cropping' %}" class="img-responsive imageTop" >
             {% else %}
-                nothing
+                <img id="img" src="{% static 'Images/kaboompics.com_Young woman relaxing at home and reading a book.jpg' %}" class="img-responsive">
             {% endif %}
-            <img src="{% cropped_thumbnail blog_detail 'cropping' %}" class="img-responsive imageTop" >
+
             <div class="relative container" style="z-index:10;top: -120px;">
                 <span class="h2 col-md-offset-1">{{ blog_detail.title }}</span>
             </div>
@@ -87,7 +91,7 @@
                 <div class="row">
                     <div class="col-md-9">
                         <div class="row">
-                            <h4 class="col-md-2 col-md-offset-1 borderbm">分類：{{ blog_detail.category }}</h4>
+                            <h4 class="col-md-3 col-md-offset-1 borderbm">分類：{{ blog_detail.category }}</h4>
                         </div>
                         <div class="row g-pt-20">
                             <div class="col-md-9 col-md-offset-1" id="content_upload1">{{ blog_detail.content_upload|safe }}</div>
