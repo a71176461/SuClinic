@@ -66,8 +66,10 @@
     <div class="fuild-container ">
         <div class="relative">
             {% if blog_detail.images %}
+                something
                 <img src="{% cropped_thumbnail blog_detail 'cropping' %}" class="img-responsive imageTop" >
             {% else %}
+                nothing
                 <img id="img" src="{% static 'Images/kaboompics.com_Young woman relaxing at home and reading a book.jpg' %}" class="img-responsive">
             {% endif %}
 {#            <img src="{% cropped_thumbnail blog_detail 'cropping' %}" class="img-responsive imageTop" >#}
