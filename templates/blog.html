@@ -58,10 +58,6 @@
         {#        #bgtask{#}
         {#            background: rgba(0,0,0,.1);#}
         {#        }#}
-        #img{
-            height: 650px;
-            width: 1920px;
-        }
     </style>
 {% endblock cssstyle1 %}
 
@@ -74,7 +70,7 @@
             {% else %}
                 <img id="img" src="{% static 'Images/kaboompics.com_Young woman relaxing at home and reading a book.jpg' %}" class="img-responsive">
             {% endif %}
-
+{#            <img src="{% cropped_thumbnail blog_detail 'cropping' %}" class="img-responsive imageTop" >#}
             <div class="relative container" style="z-index:10;top: -120px;">
                 <span class="h2 col-md-offset-1">{{ blog_detail.title }}</span>
             </div>
@@ -105,13 +101,13 @@
                             {% endfor %}
 
                         </ul>
-                        {#                        <ul>#}
-                        {#                            <li>page_obj: {{ page_obj }}</li>#}
-                        {#                            <li>blog_list: {{ blog_list }}</li>#}
-                        {#                            <li>object_list: {{ object_list }}</li>#}
-                        {#                            <li>object: {{ object }}</li>#}
-                        {#                            <li>blog_detail: {{ blog_detail }}</li>#}
-                        {#                        </ul>#}
+{#                        <ul>#}
+{#                            <li>page_obj: {{ page_obj }}</li>#}
+{#                            <li>blog_list: {{ blog_list }}</li>#}
+{#                            <li>object_list: {{ object_list }}</li>#}
+{#                            <li>object: {{ object }}</li>#}
+{#                            <li>blog_detail: {{ blog_detail }}</li>#}
+{#                        </ul>#}
                     </div>
 
                 </div>
