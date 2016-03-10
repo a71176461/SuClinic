@@ -47,6 +47,27 @@ class BlogDetailView(BlogIndexView, CategoryViewMixin, DetailView):
     template_name = 'blog.html'
     context_object_name = 'blog_detail'
 
+    def get_context_data(self, **kwargs):
+        context = super(BlogDetailView, self).get_context_data(**kwargs)
+        context.update({
+            'categories': Categories.objects.all().order_by('name'),
+        })
+        if not self.object.images:
+            crop = False
+
+        else:
+            crop = True
+
+        context.update({
+            'crop': crop,
+        })
+        # try:
+        #     crop = self.get_context_data(**kwargs)
+        # except self.object.images:
+        #     crop = False
+
+        return context
+
 # 分類文章列表
 class BlogCategoryView(SingleObjectMixin, CategoryViewMixin, ListView):
 
