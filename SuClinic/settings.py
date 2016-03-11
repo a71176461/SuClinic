@@ -56,6 +56,7 @@ INSTALLED_APPS = [
     'easy_thumbnails',
     'image_cropping',
     'captcha',
+    'storages',
 
     # The Django sites framework is required
     'django.contrib.sites',
@@ -263,6 +264,17 @@ USE_TZ = True
 PASSWORD_HASHERS = (
     'django.contrib.auth.hashers.MD5PasswordHasher',
 )
+
+
+DEFAULT_FILE_STORAGE = "storages.backends.s3boto.S3BotoStorage"
+
+AWS_ACCESS_KEY_ID = "AKIAICW3U4V3MDVUBTJA"
+AWS_SECRET_ACCESS_KEY = "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"
+AWS_STORAGE_BUCKET_NAME = "suclinic"
+AWS_QUERYSTRING_AUTH = False
+
+MEDIA_URL = 'http://%s.s3.amazonaws.com/' % AWS_STORAGE_BUCKET_NAME
+
 
 
 # Static files (CSS, JavaScript, Images)
