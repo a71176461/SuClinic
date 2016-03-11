@@ -18,9 +18,7 @@ class BlogAdminForm(ImageCroppingMixin, forms.ModelForm):
 
     class Meta:
         model = Blog
-        widgets = {
-            'image': ImageCropWidget,
-        }
+        
         # 不顯示建立時間和更改時間
         exclude = (
             'create_time',
