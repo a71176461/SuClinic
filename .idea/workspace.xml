@@ -67,10 +67,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="settings.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SuClinic/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.73702425">
+            <state vertical-scroll-proportion="-17.185184">
               <caret line="290" column="0" selection-start-line="290" selection-start-column="0" selection-end-line="290" selection-end-column="0" />
               <folding />
             </state>
@@ -117,14 +117,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="article_index.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="article_index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/article_index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="129" column="22" selection-start-line="117" selection-start-column="16" selection-end-line="129" selection-end-column="22" />
-              <folding>
-                <element signature="e#5066#5087#0#HTML" expanded="true" />
-              </folding>
+            <state vertical-scroll-proportion="0.36221838">
+              <caret line="81" column="94" selection-start-line="81" selection-start-column="94" selection-end-line="81" selection-end-column="94" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -167,7 +165,6 @@
         <option value="$PROJECT_DIR$/templates/messages_board.html" />
         <option value="$PROJECT_DIR$/templates/clinic_schedule.html" />
         <option value="$PROJECT_DIR$/article/views.py" />
-        <option value="$PROJECT_DIR$/templates/article_index.html" />
         <option value="$PROJECT_DIR$/templates/index.html" />
         <option value="$PROJECT_DIR$/templates/base.html" />
         <option value="$PROJECT_DIR$/templates/blog.html" />
@@ -175,6 +172,7 @@
         <option value="$PROJECT_DIR$/requirements.txt" />
         <option value="$PROJECT_DIR$/article/models.py" />
         <option value="$PROJECT_DIR$/SuClinic/settings.py" />
+        <option value="$PROJECT_DIR$/templates/article_index.html" />
       </list>
     </option>
   </component>
@@ -743,9 +741,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="129" column="22" selection-start-line="117" selection-start-column="16" selection-end-line="129" selection-end-column="22" />
-          <folding>
-            <element signature="e#5066#5087#0#HTML" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1030,16 +1026,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/article_index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="129" column="22" selection-start-line="117" selection-start-column="16" selection-end-line="129" selection-end-column="22" />
-          <folding>
-            <element signature="e#5066#5087#0#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/article_list_category.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-10.857142">
@@ -1092,8 +1078,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/SuClinic/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.73702425">
+        <state vertical-scroll-proportion="-17.185184">
           <caret line="290" column="0" selection-start-line="290" selection-start-column="0" selection-end-line="290" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/article_index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.36221838">
+          <caret line="81" column="94" selection-start-line="81" selection-start-column="94" selection-end-line="81" selection-end-column="94" />
           <folding />
         </state>
       </provider>
