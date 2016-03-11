@@ -27,7 +27,7 @@ class Blog(models.Model):
     # 發布時間
     time = models.DateTimeField()
     title = models.CharField(max_length=200)
-    images = models.ImageField(upload_to='blog/images/%Y/%m/%d', blank=True)
+    images = models.ImageField(upload_to='blog/images', blank=True)
 
     # 裁切後的照片，用於文章上方
     cropping = ImageRatioField('images', '1920x650')
