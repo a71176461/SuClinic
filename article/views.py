@@ -52,7 +52,7 @@ class BlogDetailView(BlogIndexView, CategoryViewMixin, DetailView):
         context.update({
             'categories': Categories.objects.all().order_by('name'),
         })
-        if not self.object.images:
+        if not self.object.images.url:
             crop = False
 
         else:
