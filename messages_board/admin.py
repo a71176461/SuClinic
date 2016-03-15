@@ -4,7 +4,7 @@ from messages_board.models import Post
 # Register your models here.
 
 class MessagesAdmin(admin.ModelAdmin):
-    list_display = ('name', )
+    list_display = ('date_time', 'name', 'content', 'response', )
     search_fields = ('name',)
 
     # class Meta:
