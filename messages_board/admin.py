@@ -7,9 +7,9 @@ class MessagesAdmin(admin.ModelAdmin):
     list_display = ('name', )
     search_fields = ('name',)
 
-    class Meta:
-        exclude = (
-            'response',
-        )
+    # class Meta:
+    #     exclude = (
+    #         'response',
+    #     )
 
 admin.site.register(Post, MessagesAdmin)
