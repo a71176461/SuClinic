@@ -30,7 +30,7 @@ class Blog(models.Model):
     images = models.ImageField(upload_to='blog/images', blank=True)
 
     # 裁切後的照片，用於文章上方
-    cropping = ImageRatioField('images.url', '1920x650')
+    cropping = ImageRatioField('images', '1920x650')
     author = models.CharField(max_length=100)
 
     # slug用於在url上傳遞文章的路徑標記，並使用uuid產生之代碼當作文章的獨立識別碼。
