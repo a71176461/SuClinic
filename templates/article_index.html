@@ -1,7 +1,7 @@
 {% extends 'article_index_base.html'%}
 {% block title %} 蘇惠珍皮膚科診所 {% endblock %}
 {% load i18n static %}
-{% load staticfiles bootstrap3 %}
+{% load staticfiles bootstrap3 cropping %}
 
 {% block cssstyle1 %}
     <meta property="fb:admins" content="a71176461">
@@ -80,6 +80,7 @@
                             <div class="col-sm-4 sm-margin-bottom-20">
                                 <a class="r-more" href="{{ blog.get_absolute_url }}">
                                     <img class="img-responsive" src="{{ blog.images.url }}" alt="">
+                                    <img src="{% cropped_thumbnail blog_detail 'cropping' %}" class="img-responsive imageTop" >
                                 </a>
 
                             </div>
