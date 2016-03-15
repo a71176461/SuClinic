@@ -18,20 +18,23 @@ Categories：文章分類
 Blog：文章
 """
 class Categories(models.Model):
-    name = models.CharField(max_length=50)
+    name = models.CharField(max_length=50, verbose_name=_(u'分類名稱'),)
 
     def __unicode__(self):
         return self.name
 
+    class Meta:
+        verbose_name = _(u"文章分類")
+
 class Blog(models.Model):
     # 發布時間
-    time = models.DateTimeField()
-    title = models.CharField(max_length=200)
-    images = models.ImageField(upload_to='blog/images', blank=True)
+    time = models.DateTimeField(verbose_name=_(u'發布時間'),)
+    title = models.CharField(max_length=200, verbose_name=_(u'標題'),)
+    images = models.ImageField(upload_to='blog/images', blank=True, verbose_name=_(u'圖片'),)
 
     # 裁切後的照片，用於文章上方
-    cropping = ImageRatioField('images', '1920x650')
-    author = models.CharField(max_length=100)
+    cropping = ImageRatioField('images', '1920x650', verbose_name=_(u'裁切圖片'),)
+    author = models.CharField(max_length=100, verbose_name=_(u'作者'),)
 
     # slug用於在url上傳遞文章的路徑標記，並使用uuid產生之代碼當作文章的獨立識別碼。
     # 如：blog/blog_detail/(?P<slug>[-\w]+)/$。
@@ -67,5 +70,6 @@ class Blog(models.Model):
     class Meta:
         # 用最新時間做排序
         ordering = ['-time']
+        verbose_name = _(u"文章")
 
 
