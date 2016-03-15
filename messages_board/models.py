@@ -31,6 +31,7 @@ class Post(models.Model):
 
     class Meta:
         ordering = ['-date_time']
+        verbose_name = '線上諮詢留言'
         # permissions = (
         #     ("can_comment", "Can comment"),
         # )
