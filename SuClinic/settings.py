@@ -14,12 +14,9 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 import os
 import tempfile
 import dj_database_url
-from .settings import *
-
-
+# from .settings import *
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-# BASE_DIR = (os.path.dirname(os.path.abspath(__file__)))
 
 
 # Quick-start development settings - unsuitable for production
@@ -27,13 +24,11 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'e$*jz$&m&dk!7evp5$=26g8o-%49!cxaq!^l=cu8g!lq446xkd'
-# SECRET_KEY = os.environ['SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
-# ALLOWED_HOSTS = []
 ALLOWED_HOSTS = ['*']
 
 
@@ -47,7 +42,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'article',
-    'su_user',
     'messages_board',
     'ckeditor',
     'ckeditor_uploader',
@@ -56,7 +50,6 @@ INSTALLED_APPS = [
     'easy_thumbnails',
     'image_cropping',
     'captcha',
-    'storages',
 
     # The Django sites framework is required
     'django.contrib.sites',
@@ -151,27 +144,44 @@ AUTHENTICATION_BACKENDS = (
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#     }
-# }
-
 DATABASES = {
-    'default': dj_database_url.config()
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.mysql',
+    #     'NAME': 'suhueichen_MYSQL',
+    #     'USER': 'b05c4c7714e744',
+    #     'PASSWORD': 'd2b635f1',
+    #     'HOST': 'ap-cdbr-azure-east-c.cloudapp.net',
+    #     'PORT': '3306',
+    # }
+    # 'default': {
+    #     'ENGINE': 'sql_server.pyodbc',
+    #     'NAME': 'suhueichen_SQL',
+    #     'USER': 'suhuiechensql@suhuiechensql',
+    #     'PASSWORD': 'Maggie820326',
+    #     'HOST': 'suhuiechensql.database.windows.net',
+    #     'PORT': '1433',
+    #     'OPTIONS': {
+    #         'driver': 'SQL Server Native Client 11.0',
+    #         'MARS_Connection': 'True',
+    #     }
+    # }
+
 }
 
-# DATABASES['default'] = dj_database_url.config()
 
 
-SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
+
+# DEFAULT_FILE_STORAGE = 'storages.backends.azure_storage.AzureStorage'
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
 
-CKEDITOR_JQUERY_URL = 'static/js/jquery-2.1.4.min.js'
+CKEDITOR_JQUERY_URL = 'js/jquery-2.1.4.min.js'
 # CKEDITOR_JQUERY_URL = '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js'
 CKEDITOR_UPLOAD_PATH = "uploads/"
 CKEDITOR_IMAGE_BACKEND = "pillow"
@@ -261,21 +271,6 @@ USE_TZ = True
 
 # ACCOUNT_SIGNUP_FORM_CLASS = 'su_user.forms.SignupForm'
 
-PASSWORD_HASHERS = (
-    'django.contrib.auth.hashers.MD5PasswordHasher',
-)
-
-
-DEFAULT_FILE_STORAGE = "storages.backends.s3boto.S3BotoStorage"
-
-AWS_ACCESS_KEY_ID = "AKIAICW3U4V3MDVUBTJA"
-AWS_SECRET_ACCESS_KEY = "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"
-AWS_STORAGE_BUCKET_NAME = "suclinic"
-AWS_QUERYSTRING_AUTH = True
-
-MEDIA_URL = 'https://%s.s3.amazonaws.com/' % AWS_STORAGE_BUCKET_NAME
-
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
@@ -284,9 +279,8 @@ STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 
-# STATIC_ROOT = os.path.join(BASE_DIR, 'assets')
-STATIC_ROOT = 'staticfiles'
+STATIC_ROOT = os.path.join(BASE_DIR, 'assets')
 
-# MEDIA_URL = '/media/'
+MEDIA_URL = '/media/'
 
-MEDIA_ROOT = 'https://%s.s3.amazonaws.com/' % AWS_STORAGE_BUCKET_NAME
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
